@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "env": "development",
+  "server": {
+    "ports": {
+      "http": 8080
+    }
+  }
+}
