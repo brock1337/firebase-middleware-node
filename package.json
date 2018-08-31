@@ -4,7 +4,15 @@
   "description": "Node middleware to interact with Firebase",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "build": "npm run clean && webpack -p",
+    "clean": "rimraf dist",
+    "client": "",
+    "dev": "NODE_ENV=development npm run server",
+    "lint": "eslint --ignore ./node_modules src/ --debug",
+    "lint-fix": "eslint --ignore ./node_modules src/ --fix",
+    "server": "babel-watch --watch src src/server --ignore tests",
+    "start": "concurrently \"npm run dev\" \"npm run client\"",
+    "test": "mocha"
   },
   "author": "Bob Rock <brock@8thwonder.io>",
   "license": "ISC",
@@ -21,6 +29,7 @@
     "helmet": "^3.13.0",
     "lodash": "^4.17.10",
     "morgan": "^1.9.0",
+    "pm2": "^3.0.4",
     "puppeteer": "^1.7.0",
     "raven": "^2.6.3",
     "winston": "^3.0.0"
@@ -50,6 +59,7 @@
     "mocha": "^5.2.0",
     "mocha-loader": "^2.0.0",
     "node-loader": "^0.6.0",
+    "rimraf": "^2.6.2",
     "sinon": "^6.1.5",
     "style-loader": "^0.23.0",
     "supertest": "^3.1.0",
