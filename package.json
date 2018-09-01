@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm run clean && webpack -p",
     "clean": "rimraf dist",
-    "client": "",
+    "client": "npm run start --prefix client",
     "dev": "NODE_ENV=development npm run server",
     "lint": "eslint --ignore ./node_modules src/ --debug",
     "lint-fix": "eslint --ignore ./node_modules src/ --fix",
