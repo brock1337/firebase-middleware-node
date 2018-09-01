@@ -5,5 +5,9 @@
     "ports": {
       "http": 8080
     }
+  },
+  "firebase": {
+    "authDomain": "middleware-8f008.firebaseapp.com",
+    "databaseUrl": "https://middleware-8f008.firebaseio.com"
   }
 }
