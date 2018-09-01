@@ -2,15 +2,15 @@ const express = require('express');
 const helmet = require('helmet');
 const Raven = require('raven');
 const bodyParser = require('body-parser');
-const cookieSession = require('cookie-session');
 const config = require('../config');
 const admin = require('firebase-admin');
 
+const serviceAccount = require('../config/middleware-8f008-firebase-adminsdk-rptti-606b99ae72');
+
 // Initialize Firebase Application
 admin.initializeApp({
-  credential: admin.credential.cert(require('../config')),
-  databaseURL: config.get('firebase.databaseURL'),
-  serviceAccountId: ''
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: config.get('firebase.databaseURL')
 });
 
 const app = new express();
