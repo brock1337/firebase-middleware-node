@@ -14,7 +14,22 @@ router.post('/create', (req, res) => {
     displayName
   })
   .then(userData => {
-    res.send(userData.toJSON());
+    const { uid, email, displayName } = userData.toJSON();
+    let user = {
+      uid,
+      email,
+      displayName,
+      token: null
+    };
+    
+    admin.auth().createCustomToken(uid)
+    .then(token => {
+      user.token = token;
+      res.send(user);
+    })
+    .catch(err => {
+      console.log('[ERROR] -> ', err);
+    });
   })
   .catch(err => {
     console.log('\n!!! [ERROR]: Creating User --> ', err);
