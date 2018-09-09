@@ -1,4 +1,4 @@
-import firebaseService from '../services/firebase';
+import firebaseService from '../services/firebase/firebase';
 
 const User = {
   handleGetUser: (req, res) => {

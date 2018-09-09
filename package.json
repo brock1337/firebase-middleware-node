@@ -11,7 +11,7 @@
     "lint": "eslint --ignore ./node_modules src/ --debug",
     "lint-fix": "eslint --ignore ./node_modules src/ --fix",
     "server": "babel-watch --watch src src/server --ignore tests",
-    "start": "concurrently \"npm run dev\" \"npm run client\"",
+    "start": "npm run dev",
     "test": "mocha"
   },
   "author": "Bob Rock <brock@8thwonder.io>",

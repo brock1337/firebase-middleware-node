@@ -11,4 +11,7 @@ router.use('/auth', require('./authRoutes'));
 // Route - /v1/users
 router.use('/users', require('./userRoutes'));
 
+// Route = /v1/logs
+router.use('/logs', require(''));
+
 module.exports = router;

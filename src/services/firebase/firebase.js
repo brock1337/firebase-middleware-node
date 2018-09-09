@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import firebase from 'firebase';
 import * as admin from 'firebase-admin';
-import { getHttpInvoker } from './httpInvoker';
+import { getHttpInvoker } from '../httpInvoker';
 
 const invoker = getHttpInvoker();
 

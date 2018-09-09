@@ -13,6 +13,13 @@ class HttpInvoker {
     });
   }
   
+  /**
+   * Make GET request via Axios
+   *
+   * @param url
+   * @param params
+   * @return {*}
+   */
   get (url, params) {
     if (!url) {
       return new Promise(resolve => resolve());
@@ -30,13 +37,27 @@ class HttpInvoker {
       return new Promise((_, reject) => reject(err) );
     });
   }
+  
+  // TODO: post method handling. Axios defaults to GET if none provided
 }
 
+/**
+ * Initialize HTTP Invoker
+ *
+ * @param name
+ * @return {*}
+ */
 function initInvoker (name) {
   invokers[name] = new HttpInvoker(config.get(name));
   return invokers[name];
 }
 
+/**
+ * Returns current instance of HTTP Invoker or creates a new one
+ *
+ * @param name
+ * @return {*}
+ */
 function getHttpInvoker (name = 'firebase') {
   return invokers[name] || initInvoker(name);
 }
